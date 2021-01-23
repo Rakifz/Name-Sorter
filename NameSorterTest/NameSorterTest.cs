@@ -27,7 +27,7 @@ namespace NameSorterTest
                 "Leonerd Adda Mitchell Monaghan"
             };
             NameSorter sorter = new NameSorter();
-            sorter.NameSort();
+            sorter.NameSort("unsorted-names-list-Test.txt");
 
             var path = Directory.GetCurrentDirectory();
             List<string> result = File.ReadAllLines(path + "\\" + "sorted-names-list.txt").ToList();

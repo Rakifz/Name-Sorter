@@ -8,14 +8,14 @@ namespace KSTTestProject
 {
 	public class NameSorter
 	{
-		public void NameSort()
+		public void NameSort(string inputFile)
 		{
 			//initiate file reader and writer classes
 			FileInputClass input = new FileInputClass();
 			FileOutputClass output = new FileOutputClass();
 
 			//getting the name lists from file unsorted-names-list.txt
-			List<string>list = input.InputList("unsorted-names-list.txt");
+			List<string>list = input.InputList(inputFile);
 
 			// sort alphabetically first, as the first name needs to be sorted
 			var alphabetSort = list.OrderBy(x => x);

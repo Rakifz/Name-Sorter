@@ -12,7 +12,7 @@ namespace KSTTestProject
 		public static void Main()
 		{
 			NameSorter sorter = new NameSorter();
-			sorter.NameSort();
+			sorter.NameSort("unsorted-names-list.txt");
 		}
 	}
 }
