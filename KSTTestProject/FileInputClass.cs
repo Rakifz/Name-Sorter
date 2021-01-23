@@ -10,8 +10,10 @@ namespace KSTTestProject
     {
         public List<string> InputList(string fileName)
         {
-            string path = Directory.GetCurrentDirectory();
+            //getting the input file (the file is  used for test, so it placed in the same folder as the solution)
+            string path = Directory.GetCurrentDirectory()+ "\\..\\..\\..\\..\\";
             
+            //return the list from input file
             return File.ReadAllLines(path+"\\"+fileName).ToList();
         }
     }

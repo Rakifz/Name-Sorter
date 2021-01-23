@@ -10,14 +10,20 @@ namespace KSTTestProject
 	{
 		public void NameSort()
 		{
+			//initiate file reader and writer classes
 			FileInputClass input = new FileInputClass();
 			FileOutputClass output = new FileOutputClass();
-			List<string> f = input.InputList("unsorted-names-list.txt");
 
-			var alpabethSort = f.OrderBy(x => x);
+			//getting the name lists from file unsorted-names-list.txt
+			List<string>list = input.InputList("unsorted-names-list.txt");
 
-			var LastNameSort = alpabethSort.OrderBy(x => x.Split(' ').Last()).ToList();
+			// sort alphabetically first, as the first name needs to be sorted
+			var alphabetSort = list.OrderBy(x => x);
 
+			// sort last name alphabetically after the first names sorted 
+			var LastNameSort = alphabetSort.OrderBy(x => x.Split(' ').Last()).ToList();
+
+			//writting the name lists to file sorted-names-list.txt
 			output.WriteOutputFile(LastNameSort, "sorted-names-list.txt");
 			
 		}
